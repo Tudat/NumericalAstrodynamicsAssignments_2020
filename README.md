@@ -1,5 +1,6 @@
 # Upgraded Course template Numerical Astrodynamics
 Hi, w.r.t. the original repository this repository is supplemented with:
+
 0. Python code and latex report integration. 
   - Plots are exported directly into your latex report.
   - Your python code is automatically included in the appendices of your report.
