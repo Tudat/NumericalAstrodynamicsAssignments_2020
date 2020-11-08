@@ -22,14 +22,14 @@ conda env create --file linux_environment.yml
 
 2. Activate the conda environment you created
 ```
-conda activate neumo_project
+conda activate num_astro
 ```
 
 ## usage: do every run:
 
-3. Performes run of main code (in `main.py`, called from `__main__.py`)
+3. Performe a run for assignment 1 (named project1) of main code (in `main.py`, called from `__main__.py`)
 ```
-python -m code.project1.src
+python -m code.project 1.src
 ```
 
 ## Testing
