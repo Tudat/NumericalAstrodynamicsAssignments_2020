@@ -209,3 +209,6 @@ boost/
 *.autosave
 *.~?~
 *.save
+
+
+*.ipynb_checkpoints*
