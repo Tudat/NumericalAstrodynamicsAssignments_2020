@@ -1,4 +1,5 @@
-# Upgraded Course template Numerical Astrodynamics
+# Upgraded Course template Numerical Astrodynamics[![Build Status](https://travis-ci.org/a-t-0/NumericalAstrodynamicsAssignments_2020.svg?branch=master)](https://travis-ci.org/a-t-0/NumericalAstrodynamicsAssignments_2020)
+
 Hi, w.r.t. the original repository this repository is supplemented with:
 
 0. Python code and latex report integration. 
@@ -12,10 +13,9 @@ Hi, w.r.t. the original repository this repository is supplemented with:
 
 ## usage: do once
 
-0. If you don't have pip: open Anaconda prompt and browse to the directory of this readme and run:
+0. If you don't have pip: open Anaconda prompt and browse to the directory of this readme:
 ```
 cd /home/<your path to the repository folder>/
-python get-pip.py
 ```
 
 1. To use this package, first make a new conda environment and activate (it this automatically installs everything you need)
