@@ -9,20 +9,28 @@ python get-pip.py
 ```
 
 1. To use this package, first make a new conda environment and activate (it this automatically installs everything you need)
-3.1 For Windows:
+1.1 For Windows:
 ```
 conda env create --file windows_environment.yml
 ```
-3.2 For Linux:
+1.2 For Linux:
 ```
 conda env create --file linux_environment.yml
+```
+2. Instal jupyter-lab with command:
+```
+jupyter-lab
 ```
 
 ## usage: do every time you start Anaconda:
 
-2. Activate the conda environment you created
+3. Activate the conda environment you created:
 ```
 conda activate num_astro
+```
+4. Open jupyter lab
+```
+jupyter-lab
 ```
 
 ## usage: do every run:
