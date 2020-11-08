@@ -58,11 +58,6 @@ python -m pytest
 ```
 from the root directory of this project.
 
-
-## Note for linux users
-The client connection requires sudo rights. I did not install conda as sudo, so ..
-
-
 <!-- Un-wrapped URL's below (Mostly for Badges) -->
 [black_badge]: https://img.shields.io/badge/code%20style-black-000000.svg
 [python_badge]: https://img.shields.io/badge/python-3.8-blue.svg
