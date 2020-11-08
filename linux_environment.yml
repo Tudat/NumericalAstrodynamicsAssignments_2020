@@ -1,7 +1,11 @@
+# run: conda env create --file linux_environment.yml
+# include new packages: conda env update --file linux_environment.yml
 name: tudat-space
 channels:
   - conda-forge
   - tudat-team
+  - conda
 dependencies:
   - tudatpy
   - matplotlib
+  - pytest>=3.0
