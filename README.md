@@ -1,4 +1,13 @@
-# Python unit test project template with continuous integration (ci).
+# Upgraded Course template Numerical Astrodynamics
+Hi, w.r.t. the original repository this repository is supplemented with:
+0. Python code and latex report integration. 
+  - Plots are exported directly into your latex report.
+  - Your python code is automatically included in the appendices of your report.
+1. You can easily sync with overleaf, e.g. if you do a last minute run, you just push and pull into overleaf, instead of manually uploading pictures.
+2. Unit tests are written. (entire repository code can be tested with a single line)
+3. Continuous integration (CI) testing is set up with Travis-CI.
+4. TODO: auto compile the latex report when you run the code.
+5. TODO: auto export jupyter notebook to pdf to include into latex report.
 
 ## usage: do once
 
