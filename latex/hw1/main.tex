@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage{amsmath} % need to be on top for eps files
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\graphicspath{ {/Images/} }
+\usepackage{epstopdf}
+
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear,open={(},close={)}} %Citation-related commands
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={175mm,265mm},
+ left=15mm,
+ top=15mm,
+ }
+
+\usepackage{cleveref} %cleverref needs to stand below amsmath package.
+\usepackage{float}
+\usepackage{url} %To be able to use url in references
+\usepackage{tabularx} % in the preamble
+\usepackage{wrapfig}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{appendix}
+
+\crefname{appsec}{Appendix}{Appendices} % refer to appendix as appendix iso as section (use with text in
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Create listings (Matlab)
+% % Create a matlab listing
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+\crefname{lstlisting}{listing}{listings}
+\Crefname{lstlisting}{Listing}{Listings}
+%%%%%%%%%%Configure matlab listing%%%%%%%%%%%%%%%%%%
+% Specify matlab listing style
+\lstset{language=Matlab,%
+    %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+%%%%%%%%%%Document%%%%%%%%%%%%%%%%%%
+\title{Research Proposal\\\large SOW-MKI96 Neuromorphic Computing}
+\author{Authors:\\ Victoria Bosch (s1056634)\\Arne Diehl (s4451392)\\Daphne Smits (s1005509)\\Akke Toeter (s1047775)}
+\date{04-11-2020}
+
+\begin{document}
+\maketitle
+%\setcounter{chapter}{-1}
+\input{Chapters/chap0.tex} %\newpage
+%\input{Chapters/Methods.tex} %\newpage
+%\input{Chapters/Significance} %\newpage
+%\input{Chapters/1h.tex} %\newpage
+%\input{Chapters/1i.tex} %\newpage
+%\input{Chapters/1j.tex} %\newpage
+%\input{Chapters/Conclusion.tex} %\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \bibliographystyle{plain} %plain style
+\bibliography{references}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+
+\begin{appendices}
+\crefalias{section}{appsec}
+\newpage
+\input{Appendices/AppA.tex} \newpage
+%\input{Appendices/AppB.tex} \newpage
+%\input{Appendices/AppC.tex} \newpage
+%\input{Appendices/AppD.tex} \newpage
+\end{appendices}
+
+\end{document}

@@ -1,0 +1,16 @@
+# run: conda env create --file linux_environment.yml
+# include new packages: conda env update --file linux_environment.yml
+name: num_astro
+dependencies:
+- python=3.6
+- anaconda
+- conda:
+  - scipy>=0.18.1
+  - numpy>=1.11.2
+  - pytest>=3.0
+  - matplotlib>=2.2.2
+  - tudatpy
+- pip
+- pip:
+  # works for regular pip packages
+  - sklearn
