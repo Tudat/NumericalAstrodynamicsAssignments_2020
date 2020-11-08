@@ -20,7 +20,7 @@ cd /home/<your path to the repository folder>/
 ```
 
 1. To use this package, first make a new conda environment and activate (it this automatically installs everything you need)
-1.1 For Windows:
+1.1 For Windows (is currently the same as for linux):
 ```
 conda env create --file windows_environment.yml
 ```
@@ -37,7 +37,7 @@ jupyter-lab
 
 3. Activate the conda environment you created:
 ```
-conda activate num_astro
+conda activate tudat-space
 ```
 4. Open jupyter lab
 ```
@@ -48,7 +48,7 @@ jupyter-lab
 
 3. Performe a run for assignment 1 (named project1) of main code (in `main.py`, called from `__main__.py`)
 ```
-python -m code.project 1.src
+python -m code.project1.src
 ```
 
 ## Testing
