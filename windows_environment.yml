@@ -1,6 +1,10 @@
 # run: conda env create --file linux_environment.yml
 # include new packages: conda env update --file linux_environment.yml
 name: num_astro
+channels:
+  - defaults
+  - anaconda
+  - tudat-team
 dependencies:
 - python=3.6
 - anaconda
