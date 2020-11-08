@@ -10,6 +10,7 @@ Hi, w.r.t. the original repository this repository is supplemented with:
 3. Continuous integration (CI) testing is set up with Travis-CI.
 4. TODO: auto compile the latex report when you run the code.
 5. TODO: auto export jupyter notebook to pdf to include into latex report.
+6. TODO: invade jupyter notebooks with unit test(s).
 
 ## usage: do once
 
