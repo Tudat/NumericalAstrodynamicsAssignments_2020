@@ -101,10 +101,8 @@ showstringspaces=false            %
 \newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
 
 
-
-
-
-
+% Include path to images
+\graphicspath{{images/}{latex/project1/}}
 
 
 
@@ -141,9 +139,12 @@ showstringspaces=false            %
 
 \maketitle
 %\setcounter{chapter}{-1}
-\input{Chapters/Introduction.tex} %\newpage
-\input{Chapters/chap1.tex} %\newpage
+%\input{Chapters/Introduction.tex} %\newpage
+%\input{Chapters/chap1.tex} %\newpage
 %\input{Chapters/Conclusion.tex} %\newpage
+\input{latex/project1/Chapters/Introduction.tex} %\newpage
+\input{latex/project1/Chapters/chap1.tex} %\newpage
+
 
 
 
@@ -165,9 +166,9 @@ showstringspaces=false            %
 \begin{appendices}
 \crefalias{section}{appsec}
 \newpage
-\input{Appendices/AppA.tex} \newpage
-\input{Appendices/AppB.tex} \newpage
-\input{Appendices/AppC.tex} \newpage
+\input{latex/project1/Appendices/AppA.tex} \newpage
+\input{latex/project1/Appendices/AppB.tex} \newpage
+\input{latex/project1/Appendices/AppC.tex} \newpage
 \end{appendices}
 
 \end{document}

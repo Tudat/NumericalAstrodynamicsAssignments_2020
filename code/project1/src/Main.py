@@ -26,7 +26,6 @@ class Main:
     
     def convert_notebook_to_pdf(self):
         ''' converts a jupyter notebook to pdf'''
-        print(f'Converting AE4868_example_notebook_update20201025.ipynb to pdf') 
         self.run_jupyter_notebook.convert_notebook_to_pdf('code/project1/src/AE4868_example_notebook_update20201025.ipynb')
     
     ################################################################

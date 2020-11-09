@@ -1,12 +1,23 @@
+import os
 from .Main import Main
+from .Compile_latex import Compile_latex
 
 print(f'Hi, I\'ll be running the main code, and I\'ll let you know when I\'m done.')
 project_nr = 1
 main = Main()
 
+# compile the latex report
+compile_latex =Compile_latex(project_nr ,'main.tex')
+exit()
+
 # run the jupyter notebooks for assignment 1 
 main.run_jupyter_notebooks()
+
+# convert jupyter notebook for assignment 1 to pdf
 main.convert_notebook_to_pdf()
+
+# compile the latex report
+compile_latex =Compile_latex(project_nr ,'main.tex')
 
 ################################################################
 ############example code to illustrate latex  image sync###############
