@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 from matplotlib import lines
 import matplotlib.pyplot as plt
 from .Plot_to_tex import Plot_to_tex as plt_tex
+from .Run_jupyter_notebooks import Run_jupyter_notebook
 
 import numpy as np
 string_length = 100
@@ -14,7 +15,19 @@ class Main:
     
     def __init__(self):
         pass
-
+        
+    
+    def run_jupyter_notebooks(self):
+        ''' runs a jupyter notebook'''
+        print(f'Running AE4868_example_notebook_update20201025') 
+        run_jupyter_notebook = Run_jupyter_notebook()
+        #run_jupyter_notebook.run_notebook('AE4868_example_notebook_update20201025.ipynb')
+        run_jupyter_notebook.run_notebook('code/project1/src/AE4868_example_notebook_update20201025.ipynb')
+        
+    
+    ################################################################
+    ############example code to illustrate latex  image sync###############
+    ################################################################
     def count(self,bits):
         count = 0
         for bit in bits:
@@ -119,22 +132,3 @@ class Main:
 if __name__ == '__main__':
     # initialize main class
     main = Main()
-    
-    # set the project number folder since this is python code, the results are exported to the project2 report
-    project_nr = 1 
-    
-    # run a genetic algorithm to create some data for a plot.
-    print("now running a")
-    res = main.do_run_a()
-    
-    # plot some graph with a single line, general form is:
-    # plt_tex.plotSingleLines(plt_tex,x,y,"x-axis label","y-axis label",lineLabels,"filename",legend_position,project_nr)
-    plt_tex.plotSingleLine(plt_tex,range(0, len(res)),res,"[runs]]","fitness [%]","run 1","4a",4,project_nr)
-    
-    # run a genetic algorithm to create some data for another plot.
-    print("now running b")
-    main.do4b(project_nr)
-
-    # run a genetic algorithm to create some data for another plot.
-    print("now running 4c")
-    main.do4c(project_nr)

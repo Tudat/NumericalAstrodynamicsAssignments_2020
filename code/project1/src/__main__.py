@@ -3,7 +3,13 @@ from .Main import Main
 print(f'Hi, I\'ll be running the main code, and I\'ll let you know when I\'m done.')
 project_nr = 1
 main = Main()
-   
+
+# run the jupyter notebooks for assignment 1 
+main.run_jupyter_notebooks()
+
+################################################################
+############example code to illustrate latex  image sync###############
+################################################################   
 # run a genetic algorithm to create some data for a plot.
 print("now running a")
 res = main.do_run_a()

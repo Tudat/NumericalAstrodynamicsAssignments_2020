@@ -59,6 +59,17 @@ python -m pytest
 ```
 from the root directory of this project.
 
+## Note for linux users:
+If you get the following error in the example notebook when running the main python code:
+```
+PermissionError: [Errno 13] Permission denied: 'total_acceleration.png'
+PermissionError: [Errno 13] Permission denied: 'total_acceleration.png'
+```
+You could resolve it with command:
+```
+sudo chown -R user:user ~/.local/share/jupyter 
+```
+
 <!-- Un-wrapped URL's below (Mostly for Badges) -->
 [black_badge]: https://img.shields.io/badge/code%20style-black-000000.svg
 [python_badge]: https://img.shields.io/badge/python-3.8-blue.svg
