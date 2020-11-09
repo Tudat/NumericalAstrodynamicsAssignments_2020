@@ -43,8 +43,8 @@
 \usepackage{tabularx} % in the preamble
 \usepackage{wrapfig}
 
-\usepackage{algorithm}
-\usepackage{algorithmic}
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
 
 
 % To get side by side pictures:{
@@ -101,11 +101,11 @@ showstringspaces=false            %
 \newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
 
 
+% Include path to images
+\graphicspath{{images/}{latex/project3/}}
 
-
-
-
-
+% Include pdf files in report
+\usepackage{pdfpages}
 
 
 \usepackage{cleveref} %cleverref needs to stand below amsmath package.
@@ -141,9 +141,12 @@ showstringspaces=false            %
 
 \maketitle
 %\setcounter{chapter}{-1}
-\input{Chapters/Introduction.tex} %\newpage
-\input{Chapters/chap1.tex} %\newpage
+%\input{Chapters/Introduction.tex} %\newpage
+%\input{Chapters/chap1.tex} %\newpage
 %\input{Chapters/Conclusion.tex} %\newpage
+\input{latex/project3/Chapters/Introduction.tex} %\newpage
+\input{latex/project3/Chapters/chap1.tex} %\newpage
+
 
 
 
@@ -165,8 +168,12 @@ showstringspaces=false            %
 \begin{appendices}
 \crefalias{section}{appsec}
 \newpage
-\input{Appendices/AppA.tex} \newpage
-\input{Appendices/AppB.tex} \newpage
+\input{latex/project3/Appendices/AppA.tex} \newpage
+\input{latex/project3/Appendices/AppB.tex} \newpage
+\input{latex/project3/Appendices/AppC.tex} \newpage
+\input{latex/project3/Appendices/AppD.tex} \newpage
+\input{latex/project3/Appendices/AppE.tex} \newpage
+\input{latex/project3/Appendices/AppF.tex} \newpage
 \end{appendices}
 
 \end{document}
