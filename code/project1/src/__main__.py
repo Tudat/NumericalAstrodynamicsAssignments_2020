@@ -6,6 +6,7 @@ main = Main()
 
 # run the jupyter notebooks for assignment 1 
 main.run_jupyter_notebooks()
+main.convert_notebook_to_pdf()
 
 ################################################################
 ############example code to illustrate latex  image sync###############

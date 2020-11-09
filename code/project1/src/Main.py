@@ -14,16 +14,20 @@ max_iterations = 1500
 class Main:
     
     def __init__(self):
+        self.run_jupyter_notebook = Run_jupyter_notebook()
         pass
         
     
     def run_jupyter_notebooks(self):
         ''' runs a jupyter notebook'''
-        print(f'Running AE4868_example_notebook_update20201025') 
-        run_jupyter_notebook = Run_jupyter_notebook()
-        #run_jupyter_notebook.run_notebook('AE4868_example_notebook_update20201025.ipynb')
-        run_jupyter_notebook.run_notebook('code/project1/src/AE4868_example_notebook_update20201025.ipynb')
+        print(f'Running AE4868_example_notebook_update20201025.ipynb') 
         
+        self.run_jupyter_notebook.run_notebook('code/project1/src/AE4868_example_notebook_update20201025.ipynb')
+    
+    def convert_notebook_to_pdf(self):
+        ''' converts a jupyter notebook to pdf'''
+        print(f'Converting AE4868_example_notebook_update20201025.ipynb to pdf') 
+        self.run_jupyter_notebook.convert_notebook_to_pdf('code/project1/src/AE4868_example_notebook_update20201025.ipynb')
     
     ################################################################
     ############example code to illustrate latex  image sync###############

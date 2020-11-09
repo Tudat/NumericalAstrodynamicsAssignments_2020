@@ -31,7 +31,7 @@ class Run_jupyter_notebook:
     
     # converts jupyter notebook to pdf
     def convert_notebook_to_pdf(self,notebook_filename):
-        pass    
+        os.system(f'jupyter nbconvert --to pdf {notebook_filename}')
     
     def get_script_dir(self):
         ''' returns the directory of this script regardles of from which level the code is executed '''
