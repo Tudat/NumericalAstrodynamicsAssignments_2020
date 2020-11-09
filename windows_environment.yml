@@ -15,5 +15,4 @@ dependencies:
 - pip
 - pip:
   # works for regular pip packages
-  - sklearn
   - pdflatex
