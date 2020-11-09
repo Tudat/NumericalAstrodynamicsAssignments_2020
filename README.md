@@ -2,21 +2,21 @@
 
 Hi, w.r.t. the original repository this repository is supplemented with:
 
-0. Python code and latex report integration. 
+0. Python code and latex report integration. The following is done with a single command: 
   - Plots are exported directly into your latex report.
   - Your python code is automatically included in the appendices of your report.
-  - The example jupyter notebook is automatically ran with a single line.
+  - The example jupyter notebook is automatically executed.
   - The example jupyter notebook is automatically converted to pdf
   - The pdf of the example jupyter notebook is automatically integrated in the latex report.
-1. The latex report is automatically compiled into a pdf.
+  - The latex report is automatically compiled into a pdf.
 1. You can easily sync with overleaf, e.g. if you do a last minute run, you just push and pull into overleaf, instead of manually uploading pictures.
 2. Unit tests are written. (entire repository code can be tested with a single line)
 
-* Room for improvement*
+**Room for improvement**
 3. The  `.travis.yml` file is currently not allowing for the Continuous integration (CI) testing with Travis-CI. I do not yet know how to include the `.._environment.yml` into `.travis.yml`. That is why the build status badge on top currently says "failed".
 4. A unit test could be written to test a function inside a jupyter notebook.
 
-## usage: do once
+## Usage: do once
 
 0. If you don't have pip: open Anaconda prompt and browse to the directory of this readme:
 ```
@@ -37,7 +37,7 @@ conda env create --file linux_environment.yml
 jupyter-lab
 ```
 
-## usage: do every time you start Anaconda:
+## Usage: do every time you start Anaconda:
 
 3. Activate the conda environment you created:
 ```
@@ -48,7 +48,7 @@ conda activate tudat-space
 jupyter-lab
 ```
 
-## usage: do every run:
+## Usage: do every run:
 
 3. Performe a run for assignment 1 (named project1) of main code (in `main.py`, called from `__main__.py`)
 ```
