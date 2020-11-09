@@ -16,3 +16,4 @@ dependencies:
 - pip:
   # works for regular pip packages
   - pdflatex
+  - testbook

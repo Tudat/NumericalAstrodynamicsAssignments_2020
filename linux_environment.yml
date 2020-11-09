@@ -1,5 +1,5 @@
-# run: conda env create --file linux_environment.yml
-# include new packages: conda env update --file linux_environment.yml
+# run: conda env create --file windows_environment.yml
+# include new packages: conda env update --file windows_environment.yml
 name: tudat-space
 channels:
   - conda-forge
@@ -16,3 +16,4 @@ dependencies:
 - pip:
   # works for regular pip packages
   - pdflatex
+  - testbook

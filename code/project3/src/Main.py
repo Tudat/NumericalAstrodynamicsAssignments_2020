@@ -24,7 +24,6 @@ class Main:
     
     def run_jupyter_notebooks(self,project_nr,notebook_names):
         '''runs a jupyter notebook'''
-        print(f'Running AE4868_example_notebook_update20201025.ipynb') 
         notebook_path = f'code/project{project_nr}/src/'
         
         for notebook_name in notebook_names:

@@ -22,8 +22,7 @@ class Run_jupyter_notebook:
         ep = ExecutePreprocessor(timeout=600, kernel_name='python3')
 
         # Execute
-        #ep.preprocess(nb, {'metadata': {'path': 'notebooks/'}})
-        ep.preprocess(nb, {'metadata': {'path': f'{self.get_script_dir()}'}})
+        ep.preprocess(nb, {'metadata': {'path': f'{self.get_script_dir()}/../../../'}})
 
         # Save output notebook
         with open(notebook_filename, 'w', encoding='utf-8') as f:

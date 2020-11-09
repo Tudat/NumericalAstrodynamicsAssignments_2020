@@ -1,6 +1,7 @@
 import unittest
 import os
 from ..src.Main import Main
+import testbook
 
 class Test_main(unittest.TestCase):
     
@@ -21,6 +22,14 @@ class Test_main(unittest.TestCase):
         expected_result = 7
         result = self.main.addTwo(5)
         self.assertEqual(expected_result,result)
+
+# test jupiter notebook function        
+#@testbook.testbook('../src/AE4868_example_notebook_update20201025.ipynb', execute=True)
+@testbook.testbook('code/project2/src/AE4868_example_notebook_update20201025.ipynb', execute=True)
+def test_addThree(tb):
+    func = tb.ref("addThree")
+
+    assert func(2) == 5
     
 if __name__ == '__main__':
     unittest.main()
