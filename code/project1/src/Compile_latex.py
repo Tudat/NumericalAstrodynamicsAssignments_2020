@@ -27,12 +27,13 @@ class Compile_latex:
     
     def move_pdf_into_latex_dir(self,relative_dir,latex_filename):
         pdf_filename = f'{latex_filename[:-4]}.pdf'
+        #print(f'pdf_filename={pdf_filename}') 
         destination= f'{self.get_script_dir()}/../../../{relative_dir}{pdf_filename}'
         #destination= f'{self.get_script_dir()}/../../../{relative_dir}'
-        shutil.move(latex_filename, destination)
-        print(f'destination={destination}')
+        
+        
         try:
-            shutil.move(latex_filename, destination)
+            shutil.move(pdf_filename, destination)
         except:
             print("Error while moving file ", pdf_filename)
     
@@ -40,7 +41,7 @@ class Compile_latex:
         try:
             os.remove(filename)
         except:
-            print("Error while deleting file ", filename)
+            print(f'Error while deleting file: {filename} but that is not too bad because the intention is for it to not be there.')
     
     def get_script_dir(self):
         ''' returns the directory of this script regardles of from which level the code is executed '''

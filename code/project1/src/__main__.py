@@ -6,10 +6,6 @@ print(f'Hi, I\'ll be running the main code, and I\'ll let you know when I\'m don
 project_nr = 1
 main = Main()
 
-# compile the latex report
-compile_latex =Compile_latex(project_nr ,'main.tex')
-exit()
-
 # run the jupyter notebooks for assignment 1 
 main.run_jupyter_notebooks()
 
