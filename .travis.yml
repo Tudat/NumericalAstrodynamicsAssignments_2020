@@ -24,23 +24,9 @@ branches:
 #install: "pip install -r requirements.txt"
 
 # New dependencies from other yaml:
-name: tudat-space
-channels:
-  - conda-forge
-  - tudat-team
-  - conda
-dependencies:
-- tudatpy
-- anaconda
-- nb_conda
-- conda:
-  - pytest>=3.0
-  - nbconvert
-- pip
-- pip:
-  # works for regular pip packages
-  - sklearn
-  - pdflatex
+install:
+ - conda env create --file windows_environment.yml
+ - conda activate tudat-space
 
 # run tests
 script:
