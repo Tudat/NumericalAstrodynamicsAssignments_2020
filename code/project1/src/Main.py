@@ -4,13 +4,17 @@ import random
 from matplotlib import pyplot as plt
 from matplotlib import lines
 import matplotlib.pyplot as plt
+import numpy as np
+
+from .Compile_latex import Compile_latex
 from .Plot_to_tex import Plot_to_tex as plt_tex
 from .Run_jupyter_notebooks import Run_jupyter_notebook
 
-import numpy as np
+# define global variables for genetic algorithm example
 string_length = 100
 mutation_chance= 1.0/string_length
 max_iterations = 1500
+
 class Main:
     
     def __init__(self):
@@ -18,18 +22,28 @@ class Main:
         pass
         
     
-    def run_jupyter_notebooks(self):
-        ''' runs a jupyter notebook'''
+    def run_jupyter_notebooks(self,project_nr,notebook_names):
+        '''runs a jupyter notebook'''
         print(f'Running AE4868_example_notebook_update20201025.ipynb') 
+        notebook_path = f'code/project{project_nr}/src/'
         
-        self.run_jupyter_notebook.run_notebook('code/project1/src/AE4868_example_notebook_update20201025.ipynb')
+        for notebook_name in notebook_names:
+            self.run_jupyter_notebook.run_notebook(f'{notebook_path}{notebook_name}')
     
-    def convert_notebook_to_pdf(self):
-        ''' converts a jupyter notebook to pdf'''
-        self.run_jupyter_notebook.convert_notebook_to_pdf('code/project1/src/AE4868_example_notebook_update20201025.ipynb')
+    def convert_notebooks_to_pdf(self,project_nr,notebook_names):
+        '''converts a jupyter notebook to pdf'''
+        notebook_path = f'code/project{project_nr}/src/'
+        
+        for notebook_name in notebook_names:
+            self.run_jupyter_notebook.convert_notebook_to_pdf(f'{notebook_path}{notebook_name}')
+    
+    def compile_latex_report(self,project_nr):
+        '''compiles latex code to pdf'''
+        compile_latex =Compile_latex(project_nr ,'main.tex')
     
     ################################################################
-    ############example code to illustrate latex  image sync###############
+    ############example code to illustrate python-latex  image sync#########
+    ##############runs arbitrary genetic algorithm, can be deleted###########
     ################################################################
     def count(self,bits):
         count = 0

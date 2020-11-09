@@ -1,4 +1,4 @@
-# run: conda env create --file linux_environment.yml
+# run: conda env create --file windows_environment.yml
 # include new packages: conda env update --file windows_environment.yml
 name: tudat-space
 channels:
@@ -11,7 +11,9 @@ dependencies:
 - nb_conda
 - conda:
   - pytest>=3.0
+  - nbconvert
 - pip
 - pip:
   # works for regular pip packages
   - sklearn
+  - pdflatex

@@ -1,23 +1,25 @@
 import os
 from .Main import Main
-from .Compile_latex import Compile_latex
 
 print(f'Hi, I\'ll be running the main code, and I\'ll let you know when I\'m done.')
 project_nr = 1
 main = Main()
 
+notebook_names = ['AE4868_example_notebook_update20201025.ipynb']
+
 # run the jupyter notebooks for assignment 1 
-main.run_jupyter_notebooks()
+main.run_jupyter_notebooks(project_nr,notebook_names)
 
 # convert jupyter notebook for assignment 1 to pdf
-main.convert_notebook_to_pdf()
+main.convert_notebooks_to_pdf(project_nr,notebook_names)
 
 # compile the latex report
-compile_latex =Compile_latex(project_nr ,'main.tex')
+main.compile_latex_report(project_nr)
 
 ################################################################
-############example code to illustrate latex  image sync###############
-################################################################   
+############example code to illustrate python-latex  image sync#########
+##############runs arbitrary genetic algorithm, can be deleted###########
+################################################################
 # run a genetic algorithm to create some data for a plot.
 print("now running a")
 res = main.do_run_a()
