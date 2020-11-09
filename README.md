@@ -1,4 +1,4 @@
-# Student Course template Numerical Astrodynamics[![Build Status](https://travis-ci.org/a-t-0/NumericalAstrodynamicsAssignments_2020.svg?branch=master)](https://travis-ci.org/a-t-0/NumericalAstrodynamicsAssignments_2020)
+# Student course template Numerical Astrodynamics[![Build Status](https://travis-ci.org/a-t-0/NumericalAstrodynamicsAssignments_2020.svg?branch=master)](https://travis-ci.org/a-t-0/NumericalAstrodynamicsAssignments_2020)
 
 Hi, w.r.t. the original repository this repository is supplemented with:
 
@@ -13,7 +13,8 @@ Hi, w.r.t. the original repository this repository is supplemented with:
 2. Unit tests are written. (entire repository code can be tested with a single line)
 
 **Room for improvement**
-3. The  `.travis.yml` file is currently not allowing for the Continuous integration (CI) testing with Travis-CI. I do not yet know how to include the `.._environment.yml` into `.travis.yml`. That is why the build status badge on top currently says "failed".
+
+3. The  `.travis.yml` file is currently not allowing for the Continuous integration (CI) testing with Travis-CI. I do not yet know how to include the `.._environment.yml` into `.travis.yml`. That is why the build status badge on top currently is gray instead of green and says "failed/canceled".
 4. A unit test could be written to test a function inside a jupyter notebook.
 
 ## Usage: do once
