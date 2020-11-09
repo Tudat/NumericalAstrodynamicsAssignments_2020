@@ -1,4 +1,4 @@
-# Upgraded Course template Numerical Astrodynamics[![Build Status](https://travis-ci.org/a-t-0/NumericalAstrodynamicsAssignments_2020.svg?branch=master)](https://travis-ci.org/a-t-0/NumericalAstrodynamicsAssignments_2020)
+# Student Course template Numerical Astrodynamics[![Build Status](https://travis-ci.org/a-t-0/NumericalAstrodynamicsAssignments_2020.svg?branch=master)](https://travis-ci.org/a-t-0/NumericalAstrodynamicsAssignments_2020)
 
 Hi, w.r.t. the original repository this repository is supplemented with:
 
