@@ -12,6 +12,7 @@ dependencies:
 - conda:
   - pytest>=3.0
   - nbconvert
+  - matplotlib
 - pip
 - pip:
   # works for regular pip packages
