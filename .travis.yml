@@ -22,7 +22,7 @@ install:
 
 # run tests
 script:
-    "python -m pytest -v test/*"
+    "python -m pytest"
 
 notifications:
   email: false
