@@ -27,10 +27,7 @@ class Compile_latex:
     
     def move_pdf_into_latex_dir(self,relative_dir,latex_filename):
         pdf_filename = f'{latex_filename[:-4]}.pdf'
-        #print(f'pdf_filename={pdf_filename}') 
         destination= f'{self.get_script_dir()}/../../../{relative_dir}{pdf_filename}'
-        #destination= f'{self.get_script_dir()}/../../../{relative_dir}'
-        
         
         try:
             shutil.move(pdf_filename, destination)
