@@ -5,12 +5,16 @@ Hi, w.r.t. the original repository this repository is supplemented with:
 0. Python code and latex report integration. 
   - Plots are exported directly into your latex report.
   - Your python code is automatically included in the appendices of your report.
+  - The example jupyter notebook is automatically ran with a single line.
+  - The example jupyter notebook is automatically converted to pdf
+  - The pdf of the example jupyter notebook is automatically integrated in the latex report.
+1. The latex report is automatically compiled into a pdf.
 1. You can easily sync with overleaf, e.g. if you do a last minute run, you just push and pull into overleaf, instead of manually uploading pictures.
 2. Unit tests are written. (entire repository code can be tested with a single line)
-3. Continuous integration (CI) testing is set up with Travis-CI.
-4. TODO: auto compile the latex report when you run the code.
-5. TODO: auto export jupyter notebook to pdf to include into latex report.
-6. TODO: invade jupyter notebooks with unit test(s).
+
+* Room for improvement*
+3. The  `.travis.yml` file is currently not allowing for the Continuous integration (CI) testing with Travis-CI. I do not yet know how to include the `.._environment.yml` into `.travis.yml`. That is why the build status badge on top currently says "failed".
+4. A unit test could be written to test a function inside a jupyter notebook.
 
 ## usage: do once
 
@@ -58,17 +62,6 @@ python -m code.project1.src
 python -m pytest
 ```
 from the root directory of this project.
-
-## Note for linux users:
-If you get the following error in the example notebook when running the main python code:
-```
-PermissionError: [Errno 13] Permission denied: 'total_acceleration.png'
-PermissionError: [Errno 13] Permission denied: 'total_acceleration.png'
-```
-You could resolve it with command:
-```
-sudo chown -R user:user ~/.local/share/jupyter 
-```
 
 <!-- Un-wrapped URL's below (Mostly for Badges) -->
 [black_badge]: https://img.shields.io/badge/code%20style-black-000000.svg
