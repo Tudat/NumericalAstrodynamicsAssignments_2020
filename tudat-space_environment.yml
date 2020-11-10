@@ -1,0 +1,21 @@
+# run: conda env create --file windows_environment.yml
+# include new packages: conda env update --file windows_environment.yml
+name: tudat-space
+channels:
+  - conda-forge
+  - tudat-team
+  - conda
+dependencies:
+- anaconda
+- nb_conda
+- conda:
+  - pytest>=3.0
+  - nbconvert
+  - matplotlib
+  - ipykernel
+  - tudatpy
+- pip
+- pip:
+  # works for regular pip packages
+  - pdflatex
+  - testbook
