@@ -6,7 +6,7 @@ channels:
   - tudat-team
   - conda
 dependencies:
-#- tudatpy
+- tudatpy
 - anaconda
 - nb_conda
 - conda:
