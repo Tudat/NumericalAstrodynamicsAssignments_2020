@@ -15,6 +15,7 @@ dependencies:
   - matplotlib
   - nb_conda_kernels
   - ipykernel
+  - tudatpy
 - pip
 - pip:
   # works for regular pip packages
