@@ -10,12 +10,14 @@ Hi, w.r.t. the original repository this repository is supplemented with:
   - The pdf of the example jupyter notebook is automatically integrated in the latex report.
   - The latex report is automatically compiled into a pdf.
 1. You can easily sync with overleaf, e.g. if you do a last minute run, you just push and pull into overleaf, instead of manually uploading pictures.
-2. Unit tests are written. (entire repository code can be tested with a single line)
+2. Example unit tests are written that test both the python code, as well as the code inside the Jupyter notebooks.
+3. All unit tests can be ran with a single command.
+4. The continuous integration with Travis-CI runs all the unit tests in this repository automatically for every push towards this repository ('s master branch). If all tests are passed, the above badge is green and says "passed".
 
 **Room for improvement**
 
-3. The  `.travis.yml` file is currently not allowing for the Continuous integration (CI) testing with Travis-CI. I do not yet know how to include the `.._environment.yml` into `.travis.yml`. That is why the build status badge on top currently is gray instead of green and says "failed/canceled".
-4. A unit test could be written to test a function inside a jupyter notebook.
+5. The code (that I wrote) could be documented more clearly, with proper comment formatting.
+6. The code that (executes and) converts the jupyter notebooks to pdf could loop through all notebooks in the respective `/src/`folder automatically in a `try` `catch` block to automatically skip new notebooks that do not yet compile. This would prevent the user from having to specify which notebooks should be compiled.
 
 ## Usage: do once
 
@@ -24,18 +26,9 @@ Hi, w.r.t. the original repository this repository is supplemented with:
 cd /home/<your path to the repository folder>/
 ```
 
-1. To use this package, first make a new conda environment and activate (it this automatically installs everything you need)
-1.1 For Windows (is currently the same as for linux):
+1. To use this package, first make a new conda environment (it this automatically installs everything you need).
 ```
-conda env create --file windows_environment.yml
-```
-1.2 For Linux:
-```
-conda env create --file linux_environment.yml
-```
-2. Instal jupyter-lab with command:
-```
-jupyter-lab
+conda env create --file tudat-space_environment.yml
 ```
 
 ## Usage: do every time you start Anaconda:
@@ -43,10 +36,6 @@ jupyter-lab
 3. Activate the conda environment you created:
 ```
 conda activate tudat-space
-```
-4. Open jupyter lab
-```
-jupyter-lab
 ```
 
 ## Usage: do every run:
