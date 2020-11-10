@@ -6,14 +6,12 @@ channels:
   - tudat-team
   - conda
 dependencies:
-- tudatpy
 - anaconda
 - nb_conda
 - conda:
   - pytest>=3.0
   - nbconvert
   - matplotlib
-  - nb_conda_kernels
   - ipykernel
   - tudatpy
 - pip
