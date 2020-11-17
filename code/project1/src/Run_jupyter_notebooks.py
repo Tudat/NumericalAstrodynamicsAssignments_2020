@@ -10,6 +10,24 @@ class Run_jupyter_notebook:
         self.script_dir = self.get_script_dir()
         print("Created main")
 
+    def run_jupyter_notebooks(self,project_nr,notebook_names):
+        '''runs a jupyter notebook'''
+        notebook_path = f'code/project{project_nr}/src/'
+        
+        for notebook_name in notebook_names:
+            self.run_jupyter_notebook.run_notebook(f'{notebook_path}{notebook_name}')
+    
+    def convert_notebooks_to_pdf(self,project_nr,notebook_names):
+        '''converts a jupyter notebook to pdf'''
+        notebook_path = f'code/project{project_nr}/src/'
+        
+        for notebook_name in notebook_names:
+            self.run_jupyter_notebook.convert_notebook_to_pdf(f'{notebook_path}{notebook_name}')
+    
+    def compile_latex_report(self,project_nr):
+        '''compiles latex code to pdf'''
+        compile_latex =Compile_latex(project_nr ,'main.tex')
+
     # runs jupyter notebook
     def run_notebook(self,notebook_filename):
         
@@ -22,7 +40,8 @@ class Run_jupyter_notebook:
         ep = ExecutePreprocessor(timeout=600, kernel_name='python3')
 
         # Execute
-        ep.preprocess(nb, {'metadata': {'path': f'{self.get_script_dir()}/../../../'}})
+        #ep.preprocess(nb, {'metadata': {'path': 'notebooks/'}})
+        ep.preprocess(nb, {'metadata': {'path': f'{self.get_script_dir()}'}})
 
         # Save output notebook
         with open(notebook_filename, 'w', encoding='utf-8') as f:

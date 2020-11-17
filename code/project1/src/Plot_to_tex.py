@@ -1,35 +1,60 @@
-### Call this from another file, for project 11, question 3b:
-### from Plot_to_tex import Plot_to_tex as plt_tex
-### multiple_y_series = np.zeros((nrOfDataSeries,nrOfDataPoints), dtype=int); # actually fill with data
-### lineLabels = [] # add a label for each dataseries
-### plt_tex.plotMultipleLines(plt_tex,single_x_series,multiple_y_series,"x-axis label [units]","y-axis label [units]",lineLabels,"3b",4,11)
-### 4b=filename
-### 4 = position of legend, e.g. top right.
-###
-### For a single line, use:
-### plt_tex.plotSingleLine(plt_tex,range(0, len(dataseries)),dataseries,"x-axis label [units]","y-axis label [units]",lineLabel,"3b",4,11)
+'''
+Plots incoming images and/or tables to a latex report with a certain layout.
 
-### You can also plot a table directly into latex, see example_create_a_table(..)
-### 
-### Then put it in latex with for example:
-###\begin{table}[H]
-###    \centering
-###    \caption{Results some computation.}\label{tab:some_computation}
-###    \begin{tabular}{|c|c|} % remember to update this to show all columns of table
-###        \hline
-###        \input{latex/project3/tables/q2.txt}
-###    \end{tabular}
-###\end{table}
-import random
+
+Attributes
+--------------
+script_dir : str 
+    the absolute path of the directory that contains this script
+
+    
+Methods
+------------
+plotSingleLine(x_path,y_series,x_axis_label,y_axis_label,label,filename,legendPosition,project_nr):
+    Outputs a plot with a single line to a latex report
+    
+plotMultipleLines(x,y_series,x_label,y_label,label,filename,legendPosition,project_nr):
+    Outputs a plot with mulltiple lines to a latex report
+    
+get_cmap(n, name='hsv'):
+    Returns a function that maps each index in 0, 1, ..., n-1 to a distinct RGB color;
+    
+generateLineTypes(y_series):
+    Generates returns a list of a vissible line type for each incoming line/y_series
+    
+put_table_in_tex(table_matrix,filename,project_nr):
+    Outputs a table into a latex report
+    
+example_create_a_table():
+    Example method that creates a python table that can be exported into a latex report
+    
+get_script_dir(self):
+    returns the absolute path of the directory that continas this script
+'''
+
+'''
+Example of how to include an exported table into your latex report.
+
+\begin{table}[H]
+    \centering
+    \caption{Results some computation.}\label{tab:some_computation}
+    \begin{tabular}{|c|c|} % remember to update this to show all columns of table
+        \hline
+        \input{latex/project3/tables/q2.txt}
+    \end{tabular}
+\end{table}
+'''
 from matplotlib import lines
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+import random
+
 class Plot_to_tex:
 
     def __init__(self):
+        '''  constructs the absolute path of the directory that contains this script '''
         self.script_dir = self.get_script_dir()
-        print("Created main")
 
     # plot graph (legendPosition = integer 1 to 4)
     def plotSingleLine(self,x_path,y_series,x_axis_label,y_axis_label,label,filename,legendPosition,project_nr):
