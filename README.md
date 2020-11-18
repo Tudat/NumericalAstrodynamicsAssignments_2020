@@ -53,7 +53,10 @@ python -m pytest
 ```
 from the root directory of this project.
 
+## Documentation
+The docstring documentation (template) was generated using `pyment`. The HTML documentation of the code was 
+generated using `pdoc`.
+
 <!-- Un-wrapped URL's below (Mostly for Badges) -->
 [black_badge]: https://img.shields.io/badge/code%20style-black-000000.svg
 [python_badge]: https://img.shields.io/badge/python-3.8-blue.svg
-[apache_badge]: https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg

@@ -19,3 +19,5 @@ dependencies:
   # works for regular pip packages
   - pdflatex
   - testbook
+  - pyment
+  - pdoc3
