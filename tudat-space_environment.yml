@@ -1,5 +1,5 @@
-# run: conda env create --file windows_environment.yml
-# include new packages: conda env update --file windows_environment.yml
+# run: conda env create --file tudat-space_environment.yml
+# include new packages: conda env update --file tudat-space_environment.yml
 name: tudat-space
 channels:
   - conda-forge
