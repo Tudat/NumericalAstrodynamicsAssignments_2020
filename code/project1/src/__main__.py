@@ -29,6 +29,7 @@ main.convert_notebooks_to_pdf(project_nr,notebook_names)
 # compile the latex report
 main.compile_latex_report(project_nr)
 
+
 ################################################################
 ############example code to illustrate python-latex  image sync#########
 ##############runs arbitrary genetic algorithm, can be deleted###########

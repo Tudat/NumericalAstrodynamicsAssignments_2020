@@ -1,63 +1,41 @@
-'''
-Plots incoming images and/or tables to a latex report with a certain layout.
-
-
-Attributes
---------------
-script_dir : str 
-    the absolute path of the directory that contains this script
-
-    
-Methods
-------------
-plotSingleLine(x_path,y_series,x_axis_label,y_axis_label,label,filename,legendPosition,project_nr):
-    Outputs a plot with a single line to a latex report
-    
-plotMultipleLines(x,y_series,x_label,y_label,label,filename,legendPosition,project_nr):
-    Outputs a plot with mulltiple lines to a latex report
-    
-get_cmap(n, name='hsv'):
-    Returns a function that maps each index in 0, 1, ..., n-1 to a distinct RGB color;
-    
-generateLineTypes(y_series):
-    Generates returns a list of a vissible line type for each incoming line/y_series
-    
-put_table_in_tex(table_matrix,filename,project_nr):
-    Outputs a table into a latex report
-    
-example_create_a_table():
-    Example method that creates a python table that can be exported into a latex report
-    
-get_script_dir(self):
-    returns the absolute path of the directory that continas this script
-'''
-
-'''
-Example of how to include an exported table into your latex report.
-
-\begin{table}[H]
-    \centering
-    \caption{Results some computation.}\label{tab:some_computation}
-    \begin{tabular}{|c|c|} % remember to update this to show all columns of table
-        \hline
-        \input{latex/project3/tables/q2.txt}
-    \end{tabular}
-\end{table}
-'''
 from matplotlib import lines
 import matplotlib.pyplot as plt
 import numpy as np
 import os
 import random
 
+
 class Plot_to_tex:
+    """Plots incoming images and/or tables to a latex report with a certain layout."""
+    """
+    Example of how to include an exported table into your latex report.
 
+    \begin{table}[H]
+        \centering
+        \caption{Results some computation.}\label{tab:some_computation}
+        \begin{tabular}{|c|c|} % remember to update this to show all columns of table
+            \hline
+            \input{latex/project3/tables/q2.txt}
+        \end{tabular}
+    \end{table}
+    """
     def __init__(self):
-        '''  constructs the absolute path of the directory that contains this script '''
         self.script_dir = self.get_script_dir()
-
-    # plot graph (legendPosition = integer 1 to 4)
+        
+        
     def plotSingleLine(self,x_path,y_series,x_axis_label,y_axis_label,label,filename,legendPosition,project_nr):
+        """Outputs a plot with a single line to a latex report
+
+        :param x_path: x coordinates of a line
+        :param y_series: y coordinates of a line
+        :param x_axis_label: label of x axis 
+        :param y_axis_label: label of y axis 
+        :param label: string describing the line (label)
+        :param filename: filename of the image that is exported to latex
+        :param legendPosition: integer in range 1 to 4 representing the legend position (or string 'best')
+        :param project_nr: the number identifying to which latex project this image is exported
+
+        """
         fig=plt.figure();
         ax=fig.add_subplot(111);
         ax.plot(x_path,y_series,c='b',ls='-',label=label,fillstyle='none');
@@ -67,8 +45,20 @@ class Plot_to_tex:
         plt.savefig(os.path.dirname(__file__)+'/../../../latex/project'+str(project_nr)+'/Images/'+filename+'.png');
 #         plt.show();
 
-    # plot graphs
+
     def plotMultipleLines(self,x,y_series,x_label,y_label,label,filename,legendPosition,project_nr):
+        """Outputs a plot with mulltiple lines to a latex report
+
+        :param x: list of x coordinates of the lines of the plot
+        :param y_series: y coordinates of the lines of the plot 
+        :param x_label: label of x axis 
+        :param y_label: label of y axis 
+        :param label: list of strings describing the lines (labels)
+        :param filename: filename of the image that is exported to latex
+        :param legendPosition: integer in range 1 to 4 representing the legend position (or string 'best')
+        :param project_nr: the number identifying to which latex project this image is exported
+
+        """
         fig=plt.figure();
         ax=fig.add_subplot(111);
 
@@ -91,14 +81,25 @@ class Plot_to_tex:
         
         print(f'plotted lines')
 
-    # Generate random line colours
-    # Source: https://stackoverflow.com/questions/14720331/how-to-generate-random-colors-in-matplotlib
+    
     def get_cmap(n, name='hsv'):
-        '''Returns a function that maps each index in 0, 1, ..., n-1 to a distinct
-        RGB color; the keyword argument name must be a standard mpl colormap name.'''
+        """Returns a function that maps each index in 0, 1, ..., n-1 to a distinct
+        RGB color; the keyword argument name must be a standard mpl colormap name.
+        Source: https://stackoverflow.com/questions/14720331/how-to-generate-random-colors-in-matplotlib
+
+        :param n: number of lines that need a distinct colour
+        :param name:  (Default value = 'hsv') the type of linecolour palet, e.g. rainbow, grayscale etc
+
+        """
         return plt.cm.get_cmap(name, n)
 
+
     def generateLineTypes(y_series):
+        """Generates returns a list of a vissible line type for each incoming line/y_series
+
+        :param y_series: list with list of y-coordinates representing the lines
+
+        """
         # generate varying linetypes
         typeOfLines = list(lines.lineStyles.keys())
 
@@ -114,9 +115,16 @@ class Plot_to_tex:
             if (typeOfLines[i]==' '):
                 typeOfLines[i]='--'
         return typeOfLines
-
-    # Create a table with: table_matrix = np.zeros((4,4),dtype=object) and pass it to this object
+        
+        
     def put_table_in_tex(self, table_matrix,filename,project_nr):
+        """Outputs a table into a latex report
+
+        :param table_matrix: numpy array with the table data
+        :param filename: filename of the table that is exported to latex
+        :param project_nr: the number identifying to which latex project this table is exported
+
+        """
         cols = np.shape(table_matrix)[1]
         format = "%s"
         for col in range(1,cols):
@@ -124,8 +132,11 @@ class Plot_to_tex:
         format = format+""
         plt.savetxt(os.path.dirname(__file__)+"/../../../latex/project"+str(project_nr)+"/tables/"+filename+".txt",table_matrix, delimiter=' & ', fmt=format, newline='  \\\\ \hline \n')
 
-    # replace this with your own table creation and then pass it to put_table_in_tex(..)
+    
     def example_create_a_table(self):
+        """Example code that generates the numpy array with 
+        table data that can be exported to a latex table. Can 
+        be modified to generate your own latex table"""
         project_nr = "1"
         table_name = "example_table_name"
         rows = 2;
@@ -143,8 +154,9 @@ class Plot_to_tex:
         
     
     def get_script_dir(self):
-        ''' returns the directory of this script regardles of from which level the code is executed '''
+        """returns the path of the directory of this script"""
         return os.path.dirname(__file__)
+
 
 if __name__ == '__main__':
     main = Plot_to_tex()
